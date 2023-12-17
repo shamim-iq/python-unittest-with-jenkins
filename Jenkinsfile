@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout your Git repository
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/shamim-iq/python-unittest-with-jenkins.git']])
+                checkout scm
             }
         }
 
@@ -32,8 +32,10 @@ pipeline {
     post {
         failure {
             // If the tests fail, print a message and set the build as unstable
-            echo 'Website loading test failed.'
-            currentBuild.result = 'UNSTABLE'
+            script {
+                echo 'Website loading test failed.'
+                currentBuild.result = 'UNSTABLE'
+            }
         }
     }
 }
