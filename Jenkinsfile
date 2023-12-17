@@ -13,13 +13,8 @@ pipeline {
             steps {
                 
                 script {
-                    // Install python3-venv package
-                    sh 'apt update'
-                    sh 'apt install -y python3-venv'
-
                     // Install Python and any dependencies
-                    sh 'python3 -m venv venv'
-                    sh 'source venv/bin/activate && pip install -r requirements.txt'
+                    sh 'pip install -r requirements.txt'
                 }
             }
         }
@@ -28,7 +23,7 @@ pipeline {
             steps {
                 // Run your Python unit tests
                 script {
-                    sh 'source venv/bin/activate && python3 -m unittest test_website_loader.py'
+                    sh 'python3 -m unittest test_website_loader.py'
                 }
             }
         }
