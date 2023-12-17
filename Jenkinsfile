@@ -14,8 +14,8 @@ pipeline {
                 
                 script {
                     // Install python3-venv package
-                    sh 'sudo apt update'
-                    sh 'sudo apt install -y python3-venv'
+                    sh 'apt update'
+                    sh 'apt install -y python3-venv'
 
                     // Install Python and any dependencies
                     sh 'python3 -m venv venv'
