@@ -5,14 +5,19 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout your Git repository
-                checkout scm
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/shamim-iq/python-unittest-with-jenkins.git']])
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                // Install Python and any dependencies
+                
                 script {
+                    // Install python3-venv package
+                    sh 'sudo apt update'
+                    sh 'sudo apt install -y python3-venv'
+
+                    // Install Python and any dependencies
                     sh 'python3 -m venv venv'
                     sh 'source venv/bin/activate && pip install -r requirements.txt'
                 }
