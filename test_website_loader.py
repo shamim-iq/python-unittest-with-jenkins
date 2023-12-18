@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 class TestWebsiteLoader(unittest.TestCase):
     def test_load_atg_world_website(self):
-        url = "https://atg.worl"
+        url = "https://atg.world"
         logger.info(f"Attempting to load the {url} website...")
         response = None
         try:
