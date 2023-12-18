@@ -1,5 +1,4 @@
-# Project Title
-Python unit testing with jenkins pipeline
+# Project Title: Python unit testing with jenkins pipeline
 
 ## Introduction
 
