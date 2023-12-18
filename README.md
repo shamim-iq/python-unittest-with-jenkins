@@ -1,6 +1,6 @@
 # Project Title: Python unit testing with jenkins pipeline
 
-## Introduction
+## Introduction.
 
 This project includes a Python unit test to verify the successful loading of the "atg.world" website. The unit test is integrated into Jenkins, hosted on a custom subdomain (e.g., jenkins.domainname.com). The Jenkins pipeline is triggered automatically through a webhook when changes are pushed to the associated GitHub repository.
 
